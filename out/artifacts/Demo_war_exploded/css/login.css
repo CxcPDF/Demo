@@ -1,0 +1,158 @@
+.login{
+    height:560px;
+    width: 100%;
+    min-width: 1190px;
+    margin:0;
+    padding:0;
+    vertical-align: baseline;
+    position: relative;
+    font-family: "Hiragino Sans GB","华文细黑","STHeiti","微软雅黑","Microsoft YaHei",SimHei,"Helvetica Neue",Helvetica,Arial,sans-serif !important;
+}
+
+.login_background{
+    z-index: 9;
+    position: absolute;
+    left:0px;
+    top:0px;
+    background-image: url("https://w.zuzuche.com/upimg/base/644/714/335/4c08ed702802370716d1efc4e4b41865.jpg")!important ;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 580px;
+}
+
+.login_wrapper{
+    margin-left: auto;
+    margin-right: auto;
+    width: 1200px;
+    position: relative;
+}
+
+.login_container{
+    z-index: 99;
+    background-color: rgba(230, 230, 230, 0.01);
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    width: 1180px;
+    height: 600px;
+}
+
+.login_bg_word{
+    position: absolute;
+    z-index: 100;
+    top: 20%;
+    left: 5%;
+    opacity: 1;
+    visibility: visible
+}
+
+.login_box_wrapper{
+    position: absolute;
+    right:20px;
+    top:38%;
+    margin-top: -120px;
+    width:350px;
+    height:auto;
+    padding-left: 25px;
+    padding-right: 25px;
+    padding-top: 10px;
+}
+
+.login_box_header{
+    padding: 12px 20px 0px 4px;
+    font-size: 16px;
+    line-height: 1.75;
+    height:40px;
+    margin: 0;
+}
+
+h3{
+    margin: 0;
+    float: left;
+    display: inline;
+    font-weight: 400;
+    font-size:16px;
+}
+
+.login_box_inner{
+    margin:0;
+    width:100%;
+    height:auto;
+}
+
+h4{
+    float: left;
+    display: inline;
+    width: 50%;
+    height: 44px;
+    margin:0px;
+    line-height: 44px;
+    font-size: 14px;
+    color: #999;
+    text-align: center;
+    cursor: pointer;
+    font-weight: 400;
+}
+
+.login_content{
+    position: relative;
+    height:auto;
+}
+
+.login_error_display{
+    position: relative;
+    height:24px;
+    color: #f86397;
+}
+
+.login_form_item{
+    position: relative;
+    height:40px;
+    margin-bottom: 20px;
+    margin-left:0;
+    width: 100%;
+}
+
+.login_form_label{
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    display: block;
+    width: 30px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+}
+
+.login_form_input{
+    border: 1px solid #D8D8D8;
+    padding: 7px 32px 7px 32px ;
+    width:287px;
+    height: 24px;
+    font-size: 14px;
+    line-height: 24px;
+    vertical-align: middle;
+    color: #333;
+    outline:0;
+}
+
+.button_login{
+    height:40px;
+    width: 100%;
+}
+
+.login_footer{
+    height:40px;
+    padding:0px;
+}
+
+#login_footer_span{
+    position: relative;
+    display: block;
+    margin-left: 210px;
+    margin-top:-10px;
+    font-size:14px;
+    font-family: PingFang SC,Helvetica Neue,Hiragino Sans GB,tahoma,arial,Microsoft Yahei,\5b8b\4f53,sans-serif;
+}

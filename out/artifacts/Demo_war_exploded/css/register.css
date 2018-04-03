@@ -1,0 +1,290 @@
+.tip_background{
+    display:block;
+    position: fixed;
+    z-index: 9999;
+    background-color: rgba(0,0,0,0.5);
+    width: 100%;
+    height:100%;
+}
+
+.tip_main{
+    position:relative;
+    width: 600px;height: 400px;
+    margin-left: auto;margin-right:auto;margin-top:auto;
+    background-color: #ffffff;
+    border-radius: 5px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08) !important;
+}
+
+.register{
+    height:580px;
+    width: 100%;
+    min-width: 1200px;
+    margin:0;
+    padding:0;
+    vertical-align: baseline;
+    position: relative;
+    background-color: #f8f8f8;
+    font-family: "Hiragino Sans GB","华文细黑","STHeiti","微软雅黑","Microsoft YaHei",SimHei,"Helvetica Neue",Helvetica,Arial,sans-serif !important;
+}
+
+.register_background{
+    z-index: 9;
+    position: absolute;
+    left:0px;
+    top:0px;
+    background-image: url("https://w.zuzuche.com/upimg/base/644/714/335/4c08ed702802370716d1efc4e4b41865.jpg")!important ;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 580px;
+}
+
+.register_wrapper{
+    margin-left: auto;
+    margin-right: auto;
+    width: 1200px;
+    position: relative;
+}
+
+.register_container{
+    z-index: 99;
+    background-color: rgba(230, 230, 230, 0.01);
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    width: 1180px;
+    height: 600px;
+}
+
+.register_bg_word{
+    position: absolute;
+    z-index: 100;
+    top: 20%;
+    left: 5%;
+    opacity: 1;
+    visibility: visible
+}
+
+.register_box_wrapper{
+    position: absolute;
+    right:20px;
+    top:38%;
+    margin-top: -170px;
+    width:350px;
+    height:auto;
+    padding-left: 25px;
+    padding-right: 25px;
+    padding-top: 10px;
+    font-family: "Hiragino Sans GB","华文细黑","STHeiti","微软雅黑","Microsoft YaHei",SimHei,"Helvetica Neue",Helvetica,Arial,sans-serif !important;
+}
+
+.register_box_header{
+    padding: 12px 20px 0px 4px;
+    font-size: 16px;
+    line-height: 1.75;
+    height:40px;
+    margin: 0;
+}
+
+h3{
+    margin: 0;
+    float: left;
+    display: inline;
+    font-weight: 400;
+    font-size:16px;
+}
+
+.register_box_inner{
+    margin:0;
+    width:100%;
+    height:auto;
+
+}
+
+.register_header{
+    position: relative;
+    height:45px;
+    border-bottom: 1px solid #D8D8D8;
+}
+
+h4{
+    float: left;
+    display: inline;
+    width: 50%;
+    height: 44px;
+    margin:0px;
+    line-height: 44px;
+    font-size: 14px;
+    color: #999;
+    text-align: center;
+    cursor: pointer;
+    font-weight: 400;
+}
+
+.register_highlight{
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    border-bottom: 2px solid #3758B7;
+    width: 50%;
+    height: 0;
+    font-size: 0;
+    line-height: normal;
+    overflow: hidden;
+    -moz-transition: left .4s ease-out;
+    -webkit-transition: left .4s ease-out;
+    transition: left .4s
+}
+
+.register_phone_content{
+    position: relative;
+    height:auto;
+}
+
+.register_mail_content{
+    position: relative;
+    height:auto;
+    display: none;
+}
+
+.register_error_display{
+    position: relative;
+    height:24px;
+    color: #f86397;
+}
+
+.register_form_item{
+    position: relative;
+    height:40px;
+    margin-bottom: 20px;
+    margin-left:0;
+    width: 100%;
+}
+
+.register_form_label{
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    display: block;
+    width: 30px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+}
+
+.register_form_input{
+    border: 1px solid #D8D8D8;
+    width: 240px;
+    padding: 7px 32px 7px 79px;
+    height: 24px;
+    font-size: 14px;
+    line-height: 24px;
+    vertical-align: middle;
+    color: #333;
+    outline:0;
+}
+
+.register_calling_code{
+    position: absolute;
+    top: 0;
+    left: 10px;
+    width: 69px;
+    height: 40px;
+    line-height: 40px;
+    font-size: 14px;
+}
+
+.register_check_code{
+    position: absolute;
+    top: 50%;
+    margin-top: -14px;
+    border-left: 1px solid #D8D8D8;
+    padding-left: 10px;
+    width: 82px;
+    height: 26px;
+    right: 10px;
+    overflow: hidden;
+    cursor: pointer;
+    background: #fff;
+}
+
+.register_send_message{
+    position: absolute;
+    margin-right: -3px;
+    padding: 0px;
+    width: 100px;
+    height: 38px;
+    top:0;
+    right: 0px;
+    overflow: hidden;
+    cursor: pointer;
+    background: #f9f9f9;
+    border:#D8D8D8 solid 1px!important;
+    color: #333;
+}
+
+.register_send_message:hover{
+    background-color: #ffffff;
+}
+
+.button_register{
+    height:40px;
+    width: 100%;
+}
+
+.register_mail_success{
+    display: none;
+}
+
+.register_footer{
+    height:40px;
+    padding:0px;
+}
+
+.register_mail_success, .register_phone_success{
+    position: absolute;
+    right:20px;
+    top:38%;
+    margin-top: -170px;
+    width:350px;
+    height:auto;
+    padding-left: 25px;
+    padding-right: 25px;
+    padding-top: 10px;
+    color: #666;
+}
+
+.success_tip{
+    font-size:18px;
+    color: #788ECE;
+    border-bottom: solid 1px #D8D8D8;
+}
+
+.register_mail_success span{
+    font-size:10px;
+    width: 100%;
+    display: block;
+    margin:0;
+    height:25px;
+}
+
+.register_phone_success span{
+    font-size:10px;
+    width: 100%;
+    display: block;
+    margin:0;
+    height:25px;
+}
+
+#go_verify_mail{
+    margin-left: 0px;
+    width:100px;
+    height: 40px;
+}
+
+span a{
+    text-decoration: none;
+    color: #3758B7;
+}

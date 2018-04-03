@@ -1,0 +1,124 @@
+<!-- Written By WangHao -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Park</title>
+    <link rel="stylesheet" href="css/font-awesome.css">
+    <link rel="stylesheet" href="css/head.css">
+    <link rel="stylesheet" href="css/park.css">
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <script src="js/park.js"></script>
+    <script>
+        function gosub(obj) {
+            var objs=obj;
+            var id=$(objs).parent().parent().find(".this_id").text();
+            $.ajax({
+                type:"post",
+                dataType:"json",
+                url:"/RentPark",
+                data:{"userName":$("#loginname").text(),"parkId":id},
+                success:function (data) {
+                    if(data.valid!=null&&data.valid=="false"){
+                        alert("请登录");
+                    }else{
+                        if(data.result=="true"){
+                            alert("预定成功！");
+                            var use=$(objs).parent().parent().find(".use_num").text();
+                            var usenum=parseInt(use);
+                            $(objs).parent().parent().find(".use_num").text(++usenum);
+                        }
+                    }
+                }
+            })
+        }
+    </script>
+</head>
+<body>
+<div class="head" id="head">
+</div>
+<div class="main_container">
+
+    <div class="main_wrapper" >
+        <div style="width: 1px;height: 12px"></div>
+        <span style="font-size: 17px;height:30px;margin-left: 20px;padding-top: 10px;"><a style="text-decoration: none;color: #333333;" href="/index.html">主页</a>>停车位</span>
+
+        <div class="item_wrapper" id="container">
+            <div class="item_sort">
+                <span>默认</span>
+                <span>价格</span>
+                <span>距离</span>
+                <span>车位数</span>
+                <select style="margin-left: 695px;" id="region">
+                    <option>黄浦区</option>
+                    <option>徐汇区</option>
+                    <option>静安区</option>
+                    <option>长宁区</option>
+                    <option>闸北区</option>
+                    <option>虹口区</option>
+                    <option>杨浦区</option>
+                    <option>宝山区</option>
+                    <option>闵行区</option>
+                    <option>嘉定区</option>
+                    <option>浦东新区</option>
+                    <option>青浦区</option>
+                    <option>松江区</option>
+                    <option>金山区</option>
+                    <option>奉贤区</option>
+                    <option>普陀区</option>
+                    <option>崇明县</option>
+                </select>
+                <span style="margin-left:2px;border-right-width: 0px;">共找到<span id="park_num" style="font-size: 16px;border-right-width: 0px"></span>个车位</span>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="foot">
+        <div class="foot_wrapper">
+            <div class="foot_info">
+                <div class="foot_item">
+                    <ul>
+                        <li>关于</li>
+                        <li>关于我们</li>
+                        <li>核心团队</li>
+                        <li>诚聘英才</li>
+                        <li>商务合作</li>
+                    </ul>
+                </div>
+                <div class="foot_item">
+                    <ul>
+                        <li>条款</li>
+                        <li>用户条款</li>
+                        <li>隐私条款</li>
+                        <li>合作条款</li>
+                    </ul>
+                </div>
+                <div class="foot_item">
+                    <ul>
+                        <li>帮助</li>
+                        <li>在线客服</li>
+                        <li>常见问题</li>
+                        <li>网站导航</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="foot_other_info">
+                咨询电话：4008-823-823<br>
+                (周一至周日 8:00-21:00)<br>
+                售后服务专线：4008-823-823<br>
+                (周一至周日 9:00-21:00)<br>
+            </div>
+            <div class="foot_follow_us">
+                <img src="https://www.alevery.com/images/2017/12/11/AnGK3.png" width="100px">
+                <span style="margin-left: 20px;text-align: center;font-size: 13px">关注我们</span>
+            </div>
+            <div class="foot_about">
+                © 2017-2017 J2EE.com All Rights Reserved. 上海吉兔翼翼网络科技有限公司 版权所有 沪ICP备19260817号
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+</body>
+</html>

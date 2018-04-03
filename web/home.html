@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <meta charset="UTF-8">
+    <title>home</title>
+    <link rel="stylesheet" href="css/font-awesome.css">
+    <link rel="stylesheet" href="css/head.css">
+    <link rel="stylesheet" href="css/home.css">
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <script>
+        function gosub(obj) {
+            $('.order').each(function () {
+                $(this).css('display', 'none');
+            });
+            $(obj).css('display', 'block');
+        }
+
+        function returncar(object) {
+            var objects=object;
+            var carname=$(objects).parent().parent().parent().find("#this_name").text();
+            var id=$(objects).parent().parent().parent().find("#this_id").text();
+            var username=$("#loginname").text();
+            $.ajax({
+                type:"post",
+                url:"/ReturnCar",
+                dataType:"json",
+                data:{"userName":username,"carName":carname,"ID":id},
+                success:function (data) {
+                    if(data.valid!=null&&data.valid=="false"){
+                        alert("请重新登陆");
+                    }else{
+                        if(data.result=="true"){
+                            alert("已还车，等待审核");
+                            $(objects).parent().parent().parent().hide();
+                        }
+                    }
+                }
+            })
+        }
+
+        function deletecar(obj) {
+            var objs=obj;
+            var id=$(obj).parent().parent().parent().find("#this_id").text();
+            var loginname=$("#loginname").text();
+            $.ajax({
+                type:"post",
+                dataType:"json",
+                url:"/CarDelete",
+                data:{"userName":loginname,"ID":id},
+                success:function (data) {
+                    if(data.valid=="false"){
+                        alert("非法请求，请登陆")
+                    }else{
+                        alert("成功删除");
+                        $(obj).parent().parent().parent().hide();
+                    }
+                }
+            })
+        }
+    </script>
+    <script src="js/home.js"></script>
+
+</head>
+
+<body>
+
+<div class="head" id="head">
+</div>
+<div class="main_container">
+    <div class="main_wrapper">
+        <div class="main_nav_left">
+            <div style="font-size: 18px;">我的主页</div>
+            <div>
+                <a href="" class="nav_item">订单管理</a>
+                <a href="javascript:void(0)" onclick="gosub('.order_isgoing')">正在进行</a>
+                <a href="javascript:void(0)" onclick="gosub('.order_completed')">已经完成</a>
+            </div>
+            <div>
+                <a href="" class="nav_item">出租管理</a>
+                <a href="javascript:void(0)" onclick="gosub('.share_isgoing')">正在出租</a>
+                <a href="javascript:void(0)" onclick="gosub('.share_waitgoing')">等待出租</a>
+            </div>
+            <div>
+                <a href="" class="nav_item">个人资料</a>
+                <a href="javascript:void(0)" onclick="gosub('.basic_info')">基本信息</a>
+                <a href="">账户安全</a>
+            </div>
+            <div>
+                <a href="" class="nav_item">钱包管理</a>
+                <a href="">钱包余额</a>
+                <a href="">充值记录</a>
+            </div>
+        </div>
+
+        <div class="main_right">
+            <div class="all_panel" style="display: none">
+            </div>
+
+            <div class="order_panel" style="display:block;">
+                <div class="order_isgoing order">
+                    <div class="tip"><h3>正在进行</h3></div>
+                    <div class="list_container" id="isgoing">
+                        <div class="list_item_tip">
+                            <span style="padding-right: 260px;padding-left: 20px">车辆描述</span>
+                            <span style="padding-right: 80px;padding-left: 20px">拥有者</span>
+                            <span style="padding-right: 80px ;padding-left:20px">开始日期</span>
+                            <span style="padding-right: 80px;padding-left: 20px">费用</span>
+                            <span style="padding-left:40px;border-right: solid 0px white">操作</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="order_completed order" style="display: none">
+                    <div class="tip"><h3>已经完成</h3></div>
+                    <div class="list_container" id="complete">
+                        <div class="list_item_tip">
+                            <span style="padding-right: 260px;padding-left: 20px">车辆描述</span>
+                            <span style="padding-right: 80px;padding-left: 20px">开始日期</span>
+                            <span style="padding-right: 80px ;padding-left:20px">结束日期</span>
+                            <span style="padding-right: 80px;padding-left: 20px">费用</span>
+                            <span style="padding-left:40px;border-right: solid 0px white">操作</span>
+                        </div>
+
+                    </div>
+                </div>
+
+
+            <div class="share_panel">
+                <div class="share_isgoing order" style="display:none;">
+                    <div class="tip"><h3>正在出租</h3></div>
+                    <div class="list_container" id="isrenting">
+                        <div class="list_item_tip">
+                            <span style="padding-right: 260px;padding-left: 20px">车辆描述</span>
+                            <span style="padding-right: 80px;padding-left: 20px">租借者</span>
+                            <span style="padding-right: 80px ;padding-left:20px">开始时间</span>
+                            <span style="padding-right: 80px;padding-left: 20px">费用</span>
+                            <span style="padding-left:40px;border-right: solid 0px white">操作</span>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="share_panel">
+                    <div class="share_waitgoing order" style="display:none;">
+                        <div class="tip"><h3>等待出租</h3></div>
+                        <div class="list_container" id="waitrented">
+                            <div class="list_item_tip">
+                                <span style="padding-right: 260px;padding-left: 20px">车辆描述</span>
+                                <span style="padding-right: 80px;padding-left: 20px">拥有者</span>
+                                <span style="padding-right: 80px ;padding-left:20px">开始时间</span>
+                                <span style="padding-right: 80px;padding-left: 20px">费用</span>
+                                <span style="padding-left:40px;border-right: solid 0px white">操作</span>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="personal_info" style="font-size: 16px">
+                <div class="basic_info order" style="display:none;">
+                    <form>
+                        <div class="person_info_item">用户名:&nbsp;&nbsp;&nbsp;
+                            <span id="username" style="color: black;font-weight: 800">one_how</span>
+                        </div>
+                        <div class="person_info_item">性别:
+                            <input type="radio" name="sex" value="male" style="height: 16px;width: 60px;"
+                                   checked="checked"><span
+                                style="font-weight: 700;">男</span>
+                            <input type="radio" name="sex" value="male" style="height: 16px;width: 60px;"><span
+                                style="font-weight: 700;">女</span>
+                        </div>
+                        <div class="person_info_item">
+                            生日:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                            style="font-weight: 700;">年</span>&nbsp;&nbsp;<select
+                            name="info_year" id="year" style="padding-left: 20px;font-size: 14px;">
+                            <option>1926</option>
+                        </select>
+                            &nbsp;&nbsp;<span style="font-weight: 700;">月</span>&nbsp;&nbsp;<select
+                            name="info_month" id="month" style="padding-left: 20px;font-size: 15px;">
+                            <option>1</option>
+                        </select>
+                            &nbsp;&nbsp;<span style="font-weight: 700;">日</span>&nbsp;&nbsp;<select name="info_day"
+                                                                                                    id="day"
+                                                                                                    style="padding-left: 20px;font-size: 15px;">
+                            <option>1</option>
+                        </select>
+                        </div>
+                        <div class="person_info_item">修改密码<br/>
+                            <div id="old_pass">原密码:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="password"></div>
+                            <div id="new_pass">新密码:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="password"></div>
+                        </div>
+                        <div class="info_tipbar" id="info_tip"></div>
+                        <button type="button" id="info_confirm">确认修改</button>
+                    </form>
+                </div>
+
+            </div>
+
+            <div class="wallet_panel" style="display:none;">
+            </div>
+        </div>
+    </div>
+
+    <div class="foot">
+        <div class="foot_wrapper">
+            <div class="foot_info">
+                <div class="foot_item">
+                    <ul>
+                        <li>关于</li>
+                        <li>关于我们</li>
+                        <li>核心团队</li>
+                        <li>诚聘英才</li>
+                        <li>商务合作</li>
+                    </ul>
+                </div>
+                <div class="foot_item">
+                    <ul>
+                        <li>条款</li>
+                        <li>用户条款</li>
+                        <li>隐私条款</li>
+                        <li>合作条款</li>
+                    </ul>
+                </div>
+                <div class="foot_item">
+                    <ul>
+                        <li>帮助</li>
+                        <li>在线客服</li>
+                        <li>常见问题</li>
+                        <li>网站导航</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="foot_other_info">
+                咨询电话：4008-823-823<br>
+                (周一至周日 8:00-21:00)<br>
+                售后服务专线：4008-823-823<br>
+                (周一至周日 9:00-21:00)<br>
+            </div>
+            <div class="foot_follow_us">
+                <img src="https://www.alevery.com/images/2017/12/11/AnGK3.png" width="100px">
+                <span style="margin-left: 20px;text-align: center;font-size: 13px">关注我们</span>
+            </div>
+            <div class="foot_about">
+                © 2017-2017 J2EE.com All Rights Reserved. 上海吉兔翼翼网络科技有限公司 版权所有 沪ICP备19260817号
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
+         version="3.1">
+
+
+    <servlet>
+        <servlet-name>UseraddServlet</servlet-name>
+        <servlet-class>website.Servlet.User.UseraddServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>UseraddServlet</servlet-name>
+        <url-pattern>/UserAdd</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>CarAddServlet</servlet-name>
+        <servlet-class>website.Servlet.Car.CarAddServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>CarAddServlet</servlet-name>
+        <url-pattern>/CarAdd</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>ParkAddServlet</servlet-name>
+        <servlet-class>website.Servlet.Park.ParkAddServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ParkAddServlet</servlet-name>
+        <url-pattern>/ParkAdd</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>CarDeleteServlet</servlet-name>
+        <servlet-class>website.Servlet.Car.CarDeleteServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>CarDeleteServlet</servlet-name>
+        <url-pattern>/CarDelete</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>RentCarServlet</servlet-name>
+        <servlet-class>website.Servlet.User.RentCarServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>RentCarServlet</servlet-name>
+        <url-pattern>/RentCar</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>UpdateUserInfoServlet</servlet-name>
+        <servlet-class>website.Servlet.User.UpdateUserInfoServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>UpdateUserInfoServlet</servlet-name>
+        <url-pattern>/UpdateUserInfo</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>ReturnCarServlet</servlet-name>
+        <servlet-class>website.Servlet.User.ReturnCarServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ReturnCarServlet</servlet-name>
+        <url-pattern>/ReturnCar</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>RentParkServlet</servlet-name>
+        <servlet-class>website.Servlet.User.RentParkServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>RentParkServlet</servlet-name>
+        <url-pattern>/RentPark</url-pattern>
+    </servlet-mapping>
+
+
+    <servlet>
+        <servlet-name>SearchServlet</servlet-name>
+        <servlet-class>website.Servlet.Search.SearchServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>SearchServlet</servlet-name>
+        <url-pattern>/Search</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>UserLoginServlet</servlet-name>
+        <servlet-class>website.Servlet.User.UserLoginServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>UserLoginServlet</servlet-name>
+        <url-pattern>/UserLogin</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>PermitOrderServlet</servlet-name>
+        <servlet-class>website.Servlet.Admin.PermitOrderServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>PermitOrderServlet</servlet-name>
+        <url-pattern>/PermitOrder</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>ChangeUserAccountStatusServlet</servlet-name>
+        <servlet-class>website.Servlet.Admin.ChangeUserAccountStatusServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ChangeUserAccountStatusServlet</servlet-name>
+        <url-pattern>/ChangeUserAccountStatus</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>ChargeMoneyServlet</servlet-name>
+        <servlet-class>website.Servlet.User.ChargeMoneyServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ChargeMoneyServlet</servlet-name>
+        <url-pattern>/ChargeMoney</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>PermitReturnCarServlet</servlet-name>
+        <servlet-class>website.Servlet.Admin.PermitReturnCarServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>PermitReturnCarServlet</servlet-name>
+        <url-pattern>/PermitReturnCar</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>LoginOutServlet</servlet-name>
+        <servlet-class>website.Servlet.User.LoginOutServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>LoginOutServlet</servlet-name>
+        <url-pattern>/LoginOut</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>ListParkServlet</servlet-name>
+        <servlet-class>website.Servlet.Park.ListParkServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ListParkServlet</servlet-name>
+        <url-pattern>/ListPark</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>ReturnRentedCar</servlet-name>
+        <servlet-class>website.Servlet.User.ReturnRentedCar</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ReturnRentedCar</servlet-name>
+        <url-pattern>/ReturnRented</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>FileUploadServlet</servlet-name>
+        <servlet-class>website.Servlet.File.FileUploadServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>FileUploadServlet</servlet-name>
+        <url-pattern>/FileUpload</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>PictureList</servlet-name>
+        <servlet-class>website.Servlet.File.PictureList</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>PictureList</servlet-name>
+        <url-pattern>/PictureList</url-pattern>
+    </servlet-mapping>
+</web-app>

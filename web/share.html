@@ -1,0 +1,237 @@
+<!--Written By WangHao -->
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <title>Share</title>
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <script src="js/jquery-ui.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script src="js/fileinput.js"></script>
+    <script src="js/fileinput-zh.js"></script>
+    <script src="js/share.js"></script>
+    <link rel="stylesheet" href="css/font-awesome.css">
+    <link rel="stylesheet" href="css/jquery-ui.css">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap-theme.css">
+    <link rel="stylesheet" href="css/fileinput.css">
+    <link rel="stylesheet" href="css/head.css">
+    <link rel="stylesheet" href="css/share.css">
+
+</head>
+<body>
+<div class="tip_background" id="agreement" style="display: none">
+    <div class="tip_main">
+        <div style="height: 20px;width: 1px"></div>
+        <span style="font-size: 24px;margin-left:60px;">出借协议</span>
+        <span style="padding-left: 350px;cursor: pointer" onclick="$('#agreement').fadeOut()"><i
+            class="fa fa-close fa-fw"></i></span>
+        <div  class="pre-scrollable" style="width: 500px;margin-left: 50px;height: 300px;">
+            <strong>欢迎使用本网站的出租服务，在出租您的车辆之间，请阅读以下协议，该协议一旦同意即具有法律效力。</strong><br/><br/>
+            一、【协议的范围】<br/>
+            1.1【协议适用主体范围】<br/>
+            本协议是您与上海市吉兔翼翼科技有限公司（以下称本公司）之间关于您注册，登陆使用本网站，以及使用本网站出借服务所订立的协议。<br/>
+            1.2【协议关系及冲突条款】<br/>
+            本协议的内容，包括但不限于以下与本服务、本协议相关的协议、规则、规范以及本公司可能不断发布的关于本服务的相关协议、规则、规范等内容，前述内容一经正式发布，即为本协议不可分割的组成部分，与其构成统一整体，您同样应当遵守：<br/>
+            二、【关于本服务】<br/>
+            2.1【本服务内容】<br/>
+            本服务是指本公司和您之间的有关车辆的租赁服务。租赁方主体为本公司。<br/>
+            2.2【本服务形式】<br/>
+            您可能通过电脑，网站，实体店等使用本网站的租赁服务。<br/>
+            2.3【服务的范围】<br/>
+            仅限在本网站出借车辆并在出借存续期时该服务范围有效，任何超出此范围的法律纠纷均与本网站无关。<br/>
+            三、【本公司义务】<br/>
+            3.1【保管义务】<br/>
+            在您的车辆租借时间内（从车交付时间计算），本公司对您车任何的损坏，破坏负有法律责任，<strong>因不可抗力造成的损坏不负有法律责任</strong>。对于车自然的老化等不具有保养义务。<br/>
+            3.2【支付义务】<br/>
+            在车的被网站其他用户租赁后，本公司有义务支付您相应的费用，费用以您提交并交付时确定的为准。<br/>
+            四、【本公司权利】<br/>
+            4.1【定价权利】<br/>
+            本公司有权对您的车租赁价格进行市场调整，并不做通知。<br/>
+            4.2【拒收权利】<br/>
+            详见4.1<br/>
+            4.3【出租权利】<br/>
+            一旦您租赁给本公司后，本公司有权利租借给任何单位，个人，或团体，并定价。您无权要求车在租赁期的具体使用方。<br/>
+            五、【用户义务】<br/>
+            5.1【车辆义务】<br/>
+            您必须保证您的车辆是符合有关法律要求的，并保证在车辆报废有效期内，并且缴纳相关保险，否则本公司有权利拒收车辆。<br/>
+            您必须保证该车辆是您自己拥有的，任何渠道取得的他人车辆并因此产生的法律后果均由您自己承担。<br/>
+            六、【用户权利】<br/>
+            6.1【知情权利】<br/>
+            您可以通过客服询问您的车辆的租借情况。本公司有权在允许范围内给予告知。<br/>
+            七、【其他】<br/>
+            7.1 本协议签订地为中华人民共和国上海市普陀区<br/>
+            7.2 本协议的成立、生效、履行、解释及纠纷解决，适用中华人民共和国大陆地区法律（不包括冲突法）。<br/>
+            7.3 若您和本公司之间发生任何纠纷或争议，首先应友好协商解决；协商不成的，您同意将纠纷或争议提交本协议签订地有管辖权的人民法院管辖。<br/>
+            7.4 本协议所有条款的标题仅为阅读方便，本身并无实际涵义，不能作为本协议涵义解释的依据。<br/>
+            7.5 本协议条款无论因何种原因部分无效或不可执行，其余条款仍有效，对双方具有约束力。<br/>
+            7.6 若本协议有中文、英文等多个语言版本，相应内容不一致的，均以中文版的内容为准。（完）<br/>
+    </div>
+        </div>
+    </div>
+</div>
+<div class="head" id="head">
+</div>
+
+<div class="main_container">
+    <div class="main_wrapper" style="position: relative">
+        <div style="width: 1px;height:10px"></div>
+        <span style="font-size: 17px;height:30px;margin-left: 0px;padding-top: 10px;"><a
+            style="text-decoration: none;color: #333333;" href="/index.html">主页</a>>车辆出租</span>
+        <div class="share_main" style="padding-top:10px;padding-left:120px;">
+            <div style="margin-top: 20px;margin-left: 20px">
+                <form>
+                    <span style="display: block;font-size:20px;margin-bottom: 10px;">1.添加车辆</span>
+                        <div class="car_info_item">车辆品牌
+                            <select id="car_brand" class="select">
+                                <option style="color: #b6b6b6" disabled selected value="0">请您选择车的品牌</option>
+                                <option>奥迪</option>
+                                <option>宝马</option>
+                                <option>奔驰</option>
+                                <option>别克</option>
+                                <option>比亚迪</option>
+                                <option>本田</option>
+                                <option>大众</option>
+                                <option>丰田</option>
+                                <option>福特</option>
+                                <option>路虎</option>
+                                <option>捷豹</option>
+                                <option>马自达</option>
+                                <option>玛莎拉蒂</option>
+                                <option>吉利</option>
+                                <option>奇瑞</option>
+                                <option>起亚</option>
+                                <option>日产</option>
+                                <option>特斯拉</option>
+                                <option>现代</option>
+                                <option>雪佛兰</option>
+                                <option>沃尔沃</option>
+                                <option>五菱</option>
+                                <option>其他</option>
+                            </select>
+                        </div>
+                        <div class="car_info_item">车辆排量
+                            <select id="car_displacement" class="select">
+                                <option style="color: #b6b6b6" disabled selected value="0">请您选择车的排量</option>
+                                <option value="1.5">1.6L以下</option>
+                                <option value="1.6">1.6L</option>
+                                <option value="1.7">1.7L</option>
+                                <option value="1.8">1.8L</option>
+                                <option value="1.9">1.9L</option>
+                                <option value="2.0">2.0L</option>
+                                <option value="2.1">2.1L</option>
+                                <option value="2.3">2.2L</option>
+                                <option value="2.4">2.2L以上</option>
+                            </select>
+                        </div>
+                        <div class="car_info_item">车辆里程
+                            <select id="car_mileage" class="select">
+                                <option style="color: #b6b6b6" disabled selected value="0">请您选择车的公里数</option>
+                                <option value="1">1000公里以下</option>
+                                <option value="2">1000-5000公里</option>
+                                <option value="3">5000-10000公里</option>
+                                <option value="4">10000-20000公里</option>
+                                <option value="5">20000-50000公里</option>
+                                <option value="6">50000-100000公里</option>
+                                <option value="7">100000公里以上</option>
+                            </select>
+                        </div>
+                        <div class="car_info_item">车龄&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <select id="car_age" class="select">
+                                <option style="color: #b6b6b6" disabled selected value="0">请您选择车龄</option>
+                                <option value="1">1年</option>
+                                <option value="2">2年</option>
+                                <option value="3">3年</option>
+                                <option value="4">4年</option>
+                                <option value="5">5年</option>
+                                <option value="6">5年以上</option>
+                            </select>
+                        </div>
+                        <div class="car_info_item">车辆类型
+                            <select id="car_type" class="select">
+                                <option style="color: #b6b6b6" disabled selected value="0">请选择您车的型号</option>
+                                <option>两厢轿车</option>
+                                <option>三厢轿车</option>
+                                <option>SUV</option>
+                                <option>面包车</option>
+                                <option>皮卡</option>
+                            </select>
+                        </div>
+
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label"
+                               style="font-size: 20px;margin-left: -15px;margin-top: 14px;">2.上传照片</label>
+                        <div class="col-sm-10" style="margin-left: -15px;">
+                            <input id="myFile" type="file" name="myFile" enctype="multipart/form-data" class="file-loading">
+                        </div>
+                    </div>
+
+                    <span style="display: block;font-size:20px;margin-bottom: 10px;">3.选择交付地点</span>
+                    <select class="select" id="location">
+                        <option style="color: #b6b6b6" disabled selected value="0">请您从以下地点中选择</option>
+                        <option>杨浦区控江路1688号</option>
+                        <option>浦东新区栖山路215号</option>
+                        <option>嘉定区博源路969号</option>
+                        <option>青浦区北青公路4228号</option>
+                        <option>普陀区红柳233号</option>
+                    </select>
+                    <div style="padding-top: 30px;font-size: 16px;"><input style="width:16px;height: 16px;"
+                                                     id="checkbox"                      type="checkbox">我已经阅读并同意<a
+                        href="javascript:void(0);" onclick="$('#agreement').fadeIn()">出借协议</a>
+                    </div>
+                    <button type="button" id="confirm_buttton"
+                            style="display: block;margin-top: 35px;width:100px;height: 40px;border-radius: 4px;">确认
+                    </button>
+                </form>
+                <div style="height: 30px;width: 1px;"></div>
+            </div>
+        </div>
+    </div>
+    <div class="foot" style="position: relative">
+        <div class="foot_wrapper">
+            <div class="foot_info">
+                <div class="foot_item">
+                    <ul>
+                        <li>关于</li>
+                        <li>关于我们</li>
+                        <li>核心团队</li>
+                        <li>诚聘英才</li>
+                        <li>商务合作</li>
+                    </ul>
+                </div>
+                <div class="foot_item">
+                    <ul>
+                        <li>条款</li>
+                        <li>用户条款</li>
+                        <li>隐私条款</li>
+                        <li>合作条款</li>
+                    </ul>
+                </div>
+                <div class="foot_item">
+                    <ul>
+                        <li>帮助</li>
+                        <li>在线客服</li>
+                        <li>常见问题</li>
+                        <li>网站导航</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="foot_other_info">
+                咨询电话：4008-823-823<br>
+                (周一至周日 8:00-21:00)<br>
+                售后服务专线：4008-823-823<br>
+                (周一至周日 9:00-21:00)<br>
+            </div>
+            <div class="foot_follow_us">
+                <img src="https://www.alevery.com/images/2017/12/11/AnGK3.png" width="100px">
+                <span style="margin-left: 20px;text-align: center;font-size: 13px">关注我们</span>
+            </div>
+            <div class="foot_about">
+                © 2017-2017 J2EE.com All Rights Reserved. 上海吉兔翼翼网络科技有限公司 版权所有 沪ICP备19260817号
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

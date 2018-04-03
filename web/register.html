@@ -1,0 +1,264 @@
+<!-- Written By WangHao -->
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <title>register</title>
+    <link rel="stylesheet" href="css/font-awesome.css">
+    <link rel="stylesheet" href="css/head.css">
+    <link rel="stylesheet" href="css/register.css"/>
+    <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+    <script src="js/register.js"></script>
+</head>
+<body>
+<div class="tip_background" id="agreement" style="display: none">
+    <div class="tip_main">
+        <div style="height: 20px;width: 1px"></div>
+        <span style="font-size: 24px;margin-left:60px;">用户协议</span>
+        <span style="padding-left: 350px;top:-10px;position:relative;cursor: pointer" onclick="$('#agreement').fadeOut()"><i
+            class="fa fa-close fa-fw"></i></span>
+        <div  style="width: 500px;margin-left: 50px;height: 300px; overflow-x:hidden;overflow-y: scroll;">
+            <strong>欢迎使用本网站的汽车共享服务，在注册之前请阅读以下协议，该协议一旦同意即具有法律效力。</strong><br/><br/>
+            一、【协议的范围】<br/>
+            1.1【协议适用主体范围】<br/>
+            本协议是您与上海市吉兔翼翼科技有限公司（以下称本公司）之间关于您注册，登陆使用本网站，以及使用本网站出借服务所订立的协议。<br/>
+            1.2【协议关系及冲突条款】<br/>
+            本协议的内容，包括但不限于以下与本服务、本协议相关的协议、规则、规范以及本公司可能不断发布的关于本服务的相关协议、规则、规范等内容，前述内容一经正式发布，即为本协议不可分割的组成部分，与其构成统一整体，您同样应当遵守：<br/>
+            二、【关于本服务】<br/>
+            2.1【本服务内容】<br/>
+            本服务是指本公司和您之间的有关车辆的租赁服务。租赁方主体为本公司。<br/>
+            2.2【本服务形式】<br/>
+            您可能通过电脑，网站，实体店等使用本网站的租赁服务。<br/>
+            2.3【服务的范围】<br/>
+            仅限在本网站出借车辆并在出借存续期时该服务范围有效，任何超出此范围的法律纠纷均与本网站无关。<br/>
+            三、【本公司义务】<br/>
+            3.1【保管义务】<br/>
+            在您的车辆租借时间内（从车交付时间计算），本公司对您车任何的损坏，破坏负有法律责任，<strong>因不可抗力造成的损坏不负有法律责任</strong>。对于车自然的老化等不具有保养义务。<br/>
+            3.2【支付义务】<br/>
+            在车的被网站其他用户租赁后，本公司有义务支付您相应的费用，费用以您提交并交付时确定的为准。<br/>
+            四、【本公司权利】<br/>
+            4.1【定价权利】<br/>
+            本公司有权对您的车租赁价格进行市场调整，并不做通知。<br/>
+            4.2【拒收权利】<br/>
+            详见4.1<br/>
+            4.3【出租权利】<br/>
+            一旦您租赁给本公司后，本公司有权利租借给任何单位，个人，或团体，并定价。您无权要求车在租赁期的具体使用方。<br/>
+            五、【用户义务】<br/>
+            5.1【车辆义务】<br/>
+            您必须保证您的车辆是符合有关法律要求的，并保证在车辆报废有效期内，并且缴纳相关保险，否则本公司有权利拒收车辆。<br/>
+            您必须保证该车辆是您自己拥有的，任何渠道取得的他人车辆并因此产生的法律后果均由您自己承担。<br/>
+            六、【用户权利】<br/>
+            6.1【知情权利】<br/>
+            您可以通过客服询问您的车辆的租借情况。本公司有权在允许范围内给予告知。<br/>
+            七、【其他】<br/>
+            7.1 本协议签订地为中华人民共和国上海市普陀区<br/>
+            7.2 本协议的成立、生效、履行、解释及纠纷解决，适用中华人民共和国大陆地区法律（不包括冲突法）。<br/>
+            7.3 若您和本公司之间发生任何纠纷或争议，首先应友好协商解决；协商不成的，您同意将纠纷或争议提交本协议签订地有管辖权的人民法院管辖。<br/>
+            7.4 本协议所有条款的标题仅为阅读方便，本身并无实际涵义，不能作为本协议涵义解释的依据。<br/>
+            7.5 本协议条款无论因何种原因部分无效或不可执行，其余条款仍有效，对双方具有约束力。<br/>
+            7.6 若本协议有中文、英文等多个语言版本，相应内容不一致的，均以中文版的内容为准。（完）<br/>
+        </div>
+    </div>
+</div>
+</div>
+
+<div class="head" id="head">
+
+</div>
+
+<div class="register">
+    <div class="register_background banner">
+    </div>
+    <div class="register_wrapper">
+        <div class="register_container">
+            <img class="register_bg_word" src="https://www.alevery.com/images/2017/12/06/An9rL.png" width="386px"
+                 height="215px"></img>
+            <div class="register_box_wrapper box">
+                <div class="register_box_header">
+                    <h3>注册账号</h3>
+                </div>
+                <div class="register_box_inner">
+                    <div class="register_header">
+                        <h4 id="register_phone">手机号注册</h4>
+                        <h4 id="register_mail">邮箱注册</h4>
+                        <div class="register_highlight" id="highlight"></div>
+                    </div>
+                    <div class="register_phone_content">
+                        <form>
+                            <div class="register_error_display"></div>
+                            <div class="register_form_item">
+                                <input type="text" name="phone_username" id="phone_number" class="register_form_input"
+                                       tabindex="1" value="" autocomplete="off" maxlength="11" placeholder="请输入中国大陆手机号码"
+                                       onkeypress="return event.keyCode>=48&&event.keyCode<=57">
+                                <div class="register_calling_code">
+                                    <div class="calling-code-text">+86</div>
+
+                                </div>
+                            </div>
+                            <div class="register_form_item">
+                                <div class="register_form_label">
+                                    <i class="fa fa-file-image-o fa-fw"></i>
+                                </div>
+                                <input type="text" name="phone_code_verify" id="phone_code_verify"
+                                       class="register_form_input" tabindex="2" value="" autocomplete="off"
+                                       maxlength="4"
+                                       placeholder="请输入右侧的图片验证码" style="padding: 7px 32px 7px 32px;width:287px;">
+                                <div class="register_check_code">
+
+                                </div>
+                            </div>
+                            <div class="register_form_item">
+                                <div class="register_form_label">
+                                    <i class="fa fa-mobile-phone fw"></i>
+                                </div>
+                                <input type="text" name="phone_verify" id="phone_code_verify2"
+                                       class="register_form_input"
+                                       tabindex="3" value="" autocomplete="off" maxlength="6" placeholder="请输入手机验证码"
+                                       style="padding: 7px 32px 7px 32px ;width:170px;">
+                                <div class="register_send_message" id="register_send_message"><span
+                                    id="send_message_tip"
+                                    style="font-size: 14px; padding-left: 18px; line-height: 36px;vertical-align: middle">点击发送</span>
+                                </div>
+                            </div>
+                            <div class="register_form_item">
+                                <div class="register_form_label">
+                                    <i class="fa fa-key fa-fw"></i>
+                                </div>
+                                <input type="password" name="phone_password" id="phone_password"
+                                       class="register_form_input password" tabindex="4" value="" autocomplete="off"
+                                       maxlength="20" placeholder="请输入密码"
+                                       style="padding: 7px 32px 7px 32px ;width:287px;">
+                            </div>
+                            <div class="register_form_item">
+                                <button type="button" class="button_register" id="phone_register">注册</button>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="register_mail_content">
+                        <form>
+                            <div class="register_error_display"></div>
+                            <div class="register_form_item">
+                                <div class="register_form_label">
+                                    <i class="fa fa-envelope-o fa-fw"></i>
+                                </div>
+                                <input type="text" name="mail_username" id="mail_address" class="register_form_input"
+                                       tabindex="1" value="" autocomplete="off" maxlength="30" placeholder="请输入邮箱名"
+                                       style="padding: 7px 32px 7px 32px;width:287px;">
+                            </div>
+
+                            <div class="register_form_item">
+                                <div class="register_form_label">
+                                    <i class="fa fa-key fa-fw"></i>
+                                </div>
+                                <input type="password" name="mail_password" id="mail_password"
+                                       class="register_form_input password" tabindex="2" value="" autocomplete="off"
+                                       maxlength="20" placeholder="请输入密码"
+                                       style="padding: 7px 32px 7px 32px ;width:287px;">
+                            </div>
+
+                            <div class="register_form_item">
+                                <div class="register_form_label">
+                                    <i class="fa fa-file-image-o fa-fw"></i>
+                                </div>
+                                <input type="text" name="mail_code_verify" id="mail_code_verify"
+                                       class="register_form_input"
+                                       tabindex="3" value="" autocomplete="off" maxlength="4" placeholder="请输入右侧的图片验证码"
+                                       style="padding: 7px 32px 7px 32px;width:287px;">
+                                <div class="register_check_code">
+                                </div>
+                            </div>
+
+                            <div class="register_form_item">
+                                <button type="button" class="button_register" id="mail_register">注册</button>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="register_mail_success">
+                        <div class="success_tip">还差一步，完成邮箱验证即可注册成功</div>
+                        <span></span>
+                        <span>24小时有效,请尽快前往邮箱验证</span>
+                        <button class="goto_verify_mail">前往邮箱</button>
+                        <span>没有收到邮件？建议：</span>
+
+                    </div>
+                    <div class="register_footer">
+                        <div style="width: 1px;height: 10px;"></div>
+                        <span style="font-size: 14px;margin-top: 10px;">注册即代表您同意<a href="javascript:void(0);"onclick="$('.tip_background').fadeIn()">用户协议</a></span>
+                        <span style="font-size: 14px;margin-left: 30px;">已经有账号？<a href="/login.html">直接登陆</a></span>
+                    </div>
+                </div>
+            </div>
+            <div class="register_phone_success box" style="display: none;color: #333">
+                <div class="success_tip">恭喜您成功注册！</div>
+                <div style="width: 10px;height: 10px;"></div>
+                <span id="get_phone_num"></span>
+                <span style="font-size: 13px">您可以使用该手机号登陆</span>
+                <br/>
+                <button type="button" onclick="window.open('/login.html','_blank');" style="width:100px;height: 40px;">去登陆
+                </button>
+                <br/><br/><br/><br/>
+            </div>
+            <div class="register_mail_success box" style="display: none; color:#333">
+                <div class="success_tip">还差一步，完成邮箱验证即可注册成功</div>
+                <span id="get_mail_address"></span>
+                <span style="font-size: 13px">24小时有效,请尽快前往邮箱验证</span>
+                <br/>
+                <button type="button" id="go_verify_mail">前往邮箱</button>
+                <br/><br/>
+                <span style="font-size: 13px">没有收到邮件？建议：</span>
+                <span>查看邮件垃圾箱</span>
+                <span id="resend_mail">两分钟后未收到邮件？<a href="">重新发送</a></span>
+                <span>不小心输错了邮箱？<a href="">重新注册</a></span>
+                <span></span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="foot">
+    <div class="foot_wrapper">
+        <div class="foot_info">
+            <div class="foot_item">
+                <ul>
+                    <li>关于</li>
+                    <li>关于我们</li>
+                    <li>核心团队</li>
+                    <li>诚聘英才</li>
+                    <li>商务合作</li>
+                </ul>
+            </div>
+            <div class="foot_item">
+                <ul>
+                    <li>条款</li>
+                    <li>用户条款</li>
+                    <li>隐私条款</li>
+                    <li>合作条款</li>
+                </ul>
+            </div>
+            <div class="foot_item">
+                <ul>
+                    <li>帮助</li>
+                    <li>在线客服</li>
+                    <li>常见问题</li>
+                    <li>网站导航</li>
+                </ul>
+            </div>
+        </div>
+        <div class="foot_other_info">
+            咨询电话：4008-823-823<br>
+            (周一至周日 8:00-21:00)<br>
+            售后服务专线：4008-823-823<br>
+            (周一至周日 9:00-21:00)<br>
+        </div>
+        <div class="foot_follow_us">
+            <img src="https://www.alevery.com/images/2017/12/11/AnGK3.png" width="100px">
+            <span style="margin-left: 20px;text-align: center;font-size: 13px">关注我们</span>
+        </div>
+        <div class="foot_about">
+            © 2017-2017 J2EE.com All Rights Reserved. 上海吉兔翼翼网络科技有限公司 版权所有 沪ICP备19260817号
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,237 @@
+<!--Written By Chenzhe
+ Modified By WangHao-->
+
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <meta charset="UTF-8">
+    <title>admin</title>
+    <link rel="stylesheet" href="css/font-awesome.css">
+    <link rel="stylesheet" href="css/head.css">
+    <link rel="stylesheet" href="css/admin.css">
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <script src="js/admin.js"></script>
+    <script>
+        function gosub(obj) {
+            $('.order').each(function () {
+                $(this).css('display', 'none');
+            });
+            $(obj).css('display', 'block');
+        }
+
+        function confirm_new(obj) {
+            var objs=obj;
+            var id=$(objs).parent().parent().parent().find("#this_id").text();
+            var price=$(objs).parent().parent().parent().find(".each_price").val();
+            $.ajax({
+                type:"post",
+                url:"/PermitOrder",
+                dataType:"json",
+                data:{ID:id,"price":price},
+                success:function (data) {
+                        if(data.valid=="false"){
+                            alert("认证错误");
+                        }else if(data.result=="true"){
+                            alert("审核通过");
+                            $(objs).parent().parent().parent().hide();
+                        }
+                }
+            })
+        }
+        function delete_new(obj) {
+            var objs=obj;
+            var id=$(obj).parent().parent().parent().find("#this_id").text();
+            var loginname=$("#loginname").text();
+
+            $.ajax({
+                type:"post",
+                dataType:"json",
+                url:"/CarDelete",
+                data:{"userName":loginname,"ID":id},
+                success:function (data) {
+                    if(data.valid=="false"){
+                        alert("非法请求，请登陆")
+                    }else{
+                        alert("成功删除");
+                        $(obj).parent().parent().parent().hide();
+                    }
+                }
+            })
+        }
+        function confirm_return(obj) {
+            var objs=obj;
+            var id=$(objs).parent().parent().parent().find("#this_id3").text();
+            $.ajax({
+                type:"post",
+                url:"/PermitReturnCar",
+                dataType:"json",
+                data:{ID:id},
+                success:function (data) {
+                    if(data.valid=="false"){
+                        alert("认证错误");
+                    }else if(data.result=="true"){
+                        alert("审核通过");
+                        $(objs).parent().parent().parent().hide();
+                    }
+                }
+            });
+        }
+
+    </script>
+
+</head>
+
+<body>
+<div class="head" id="head">
+</div>
+<div class="main_container">
+    <div class="main_wrapper">
+        <div class="main_nav_left">
+            <div>
+                <a href="" class="nav_item" style="font-size: 17px";>网站总览</a>
+            </div>
+            <div>
+                <a href="" class="nav_item">订单管理</a>
+                <a href="javascript:void(0)" onclick="gosub('.check_new')">审核出租</a>
+                <a href="javascript:void(0)" onclick="gosub('.isgoing')">正在进行</a>
+                <a href="javascript:void(0)" onclick="gosub('.check_com')">审核完成</a>
+            </div>
+            <div>
+                <a href="" class="nav_item">车位管理</a>
+                <a href="javascript:void(0)" onclick="gosub('.manage_park')">管理停车场</a>
+            </div>
+            <div>
+                <a href="" class="nav_item">会员管理</a>
+                <a href="javascript:void(0)" onclick="gosub('.manage_user')">会员信息</a>
+                <a href="">信息广播</a>
+            </div>
+            <div>
+                <a href="" class="nav_item">网站管理</a>
+                <a href="">主页图片</a>
+                <a href="">网站维护</a>
+            </div>
+        </div>
+
+        <div class="main_right">
+            <div class="all_panel" style="display: none">
+            </div>
+
+            <div class="panel" style="display:block;">
+                <div class="check_new order">
+                    <div class="tip"><h3>审核出租</h3></div>
+                    <div class="list_container" id="check_new">
+                        <div class="list_item_tip">
+                            <span style="padding-right: 260px;padding-left: 20px">车辆描述</span>
+                            <span style="padding-right: 80px;padding-left: 20px">出租者</span>
+                            <span style="padding-right: 80px ;padding-left:20px">提交时间</span>
+                            <span style="padding-right: 80px;padding-left: 20px">填写费用</span>
+                            <span style="padding-left:40px;border-right: solid 0px white">操作</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="isgoing order" style="display: none">
+                    <div class="tip"><h3>正在进行</h3></div>
+                    <div class="list_container" id="isgoing">
+                        <div class="list_item_tip">
+                            <span style="padding-right: 260px;padding-left: 20px">车辆描述</span>
+                            <span style="padding-right: 80px;padding-left: 20px">开始日期</span>
+                            <span style="padding-right: 80px ;padding-left:20px">租借者</span>
+                            <span style="padding-right: 80px;padding-left: 20px">费用</span>
+                            <span style="padding-left:40px;border-right: solid 0px white">操作</span>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="check_com order" style="display: none">
+                    <div class="tip"><h3>审核完成</h3></div>
+                    <div class="list_container" id="check_com">
+                        <div class="list_item_tip">
+                            <span style="padding-right: 260px;padding-left: 20px">车辆描述</span>
+                            <span style="padding-right: 80px;padding-left: 20px">开始日期</span>
+                            <span style="padding-right: 80px ;padding-left:20px">租借者</span>
+                            <span style="padding-right: 80px;padding-left: 20px">费用</span>
+                            <span style="padding-left:40px;border-right: solid 0px white">操作</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="manage_park order" style="display: none">
+                    <div class="tip"><h3 style="width: 100px;display: inline-block">管理停车场</h3><button style="margin-left: 700px;margin-top: 20px;display: inline-block;font-size: 14px;height:24px;">添加停车位</button></div>
+                    <div class="list_container" id="manage_park">
+                        <div class="list_item_tip">
+                            <span style="padding-right: 260px;padding-left: 20px">名称</span>
+                            <span style="padding-right: 80px;padding-left: 20px">位置</span>
+                            <span style="padding-right: 80px ;padding-left:20px">费用</span>
+                            <span style="padding-right: 80px;padding-left: 20px">车位</span>
+                            <span style="padding-left:40px;border-right: solid 0px white">操作</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="manage_user order" style="display: none">
+                    <div class="tip"><h3>会员管理</h3></div>
+                    <div class="list_container" id="manage_user">
+                        <div class="list_item_tip">
+                            <span style="padding-right: 260px;padding-left: 20px">名字</span>
+                            <span style="padding-right: 80px;padding-left: 20px">待审</span>
+                            <span style="padding-right: 80px ;padding-left:20px">代租</span>
+                            <span style="padding-right: 80px;padding-left: 20px">正在进行</span>
+                            <span style="padding-left:40px;border-right: solid 0px white">操作</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="foot">
+            <div class="foot_wrapper">
+                <div class="foot_info">
+                    <div class="foot_item">
+                        <ul>
+                            <li>关于</li>
+                            <li>关于我们</li>
+                            <li>核心团队</li>
+                            <li>诚聘英才</li>
+                            <li>商务合作</li>
+                        </ul>
+                    </div>
+                    <div class="foot_item">
+                        <ul>
+                            <li>条款</li>
+                            <li>用户条款</li>
+                            <li>隐私条款</li>
+                            <li>合作条款</li>
+                        </ul>
+                    </div>
+                    <div class="foot_item">
+                        <ul>
+                            <li>帮助</li>
+                            <li>在线客服</li>
+                            <li>常见问题</li>
+                            <li>网站导航</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="foot_other_info">
+                    咨询电话：4008-823-823<br>
+                    (周一至周日 8:00-21:00)<br>
+                    售后服务专线：4008-823-823<br>
+                    (周一至周日 9:00-21:00)<br>
+                </div>
+                <div class="foot_follow_us">
+                    <img src="https://www.alevery.com/images/2017/12/11/AnGK3.png" width="100px">
+                    <span style="margin-left: 20px;text-align: center;font-size: 13px">关注我们</span>
+                </div>
+                <div class="foot_about">
+                    © 2017-2017 J2EE.com All Rights Reserved. 上海吉兔翼翼网络科技有限公司 版权所有 沪ICP备19260817号
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

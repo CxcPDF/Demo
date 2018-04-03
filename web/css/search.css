@@ -1,0 +1,240 @@
+.main_container{
+    min-width: 1200px;
+    background-color: #ffffff;
+    font-family: "Hiragino Sans GB","华文细黑","STHeiti","微软雅黑","Microsoft YaHei",SimHei,"Helvetica Neue",Helvetica,Arial,sans-serif !important;
+}
+
+.main_wrapper{
+    margin:0 auto;
+    position: relative;
+    width: 1200px;
+}
+
+.tip{
+    height:54px;
+}
+
+.crumbs{
+    height: 54px;
+    line-height: 54px;
+    font-size:14px;
+}
+
+.crumbs span a:hover{
+    color: #22ac38!important;
+}
+
+.search_panel{
+    height:200px;
+}
+
+.search_item{
+    height:50px;
+    border: 1px solid #e6e6e6;
+    position: relative;
+}
+
+.item_discription{
+    height: 50px;
+    width:70px;
+    background-color: #fafafa;
+    position: absolute;
+    line-height: 50px;
+    font-size: 14px;
+    color: #7a838d;
+    text-align: center;
+    z-index: 1;
+}
+
+.item_wrapper{
+    height:50px;
+    position: absolute;
+    left: 90px;
+    padding-top: 15px;
+    z-index: 1;
+}
+
+.item_extend{
+    display: none;
+    width:1118px;
+    position: absolute;
+    left: 70px;
+    top:50px;
+    border-left:1px solid #e6e6e7;
+    border-bottom: 1px solid #e6e6e6;
+    border-right:1px solid #e6e6e6;
+    z-index:99;
+    height: 52px;
+    background-color: #ffffff;
+    padding-left: 10px;
+}
+
+.item_extend span{
+    margin-top: 15px;
+    padding-left: 15px;
+    vertical-align: center;
+    font-size: 14px;
+    float:left;
+    height:20px;
+    line-height: 20px;
+    color: #495056;
+    cursor: pointer;
+    width: 70px;
+}
+
+.item_extend span:hover{
+    color: #22ac38;
+}
+
+.item_wrapper span{
+    padding-left: 15px;
+    vertical-align: center;
+    font-size: 14px;
+    float:left;
+    height:20px;
+    line-height: 20px;
+    color: #495056;
+    cursor: pointer;
+}
+
+.item_wrapper span:hover{
+    color: #22ac38;
+}
+.brand .item_wrapper span{
+    width:60px;
+}
+
+.displacement .item_wrapper span{
+    width:84px;
+}
+
+.mileage .item_wrapper span{
+    width:110px;
+}
+
+#arrow{
+    transition: 0.3s ease-out;
+}
+
+.item_age , .item_type, .confirm_button{
+    position: relative;
+    height:25px;
+    border: 1px solid #e6e6e6;
+    float: left;
+    width: 90px;
+    font-size: 14px;
+    text-align: center;
+}
+
+.item_age{
+    margin-left: 30px;
+}
+
+.item_type{
+    margin-left: 80px;
+}
+
+.confirm_button{
+    color: white;
+    margin-left: 580px;
+    background-color: #2D8CF0;
+    cursor: pointer;
+    font-size: 15px;
+    font-family: PingFang SC, Helvetica Neue, Hiragino Sans GB, tahoma, arial, Microsoft Yahei, \5b8b\4f53, sans-serif;
+    border-radius: 3px;
+}
+
+.confirm_button:hover{
+    background-color: #57a3f3;
+    cursor: pointer;
+}
+
+.item_type_more,.item_age_more{
+    position: absolute;
+    background-color: white;
+    border-top-width: 0px;
+    border-bottom:1px solid #22ac38;
+    border-left:1px solid #22ac38;
+    border-right:1px solid #22ac38;
+    left:0px;
+    top:25px;
+    padding: 0px;
+}
+
+.item_age_more span,.item_type_more span{
+    height: 25px;
+    width:90px;
+    padding: 0;
+    margin-top:10px;
+}
+
+.main_tip{
+    width: 1200px;
+    border-bottom: 1px solid #e6e6e6;
+    height:80px;
+    position:relative;
+}
+
+.main_item_wrapper{
+    margin-top: 20px;
+    width: 1200px;
+    margin-bottom: 60px;
+}
+
+.main_item{
+    width: 256px;
+    height: 256px;
+    color: #495056;
+    text-decoration: none;
+    background-color: #ffffff;
+    display: inline-block;
+    padding:20px;
+    border-radius: 3px;
+    vertical-align: top;
+}
+
+.main_item:hover{
+    border: 1px solid #e6e6e6;
+    box-shadow: 0 0 5px 2px #e6e6e6;
+}
+
+.main_item_inner{
+    width: 254px;
+    height: 254px;
+    cursor: pointer;
+}
+
+.item_img{
+    width: 254px;
+    height:200px;
+}
+
+.item_dis{
+    width: 254px;
+    height:27px;
+    font-size:20px;
+    line-height: 27px;
+}
+
+.item_act{
+    width: 254px;
+    height: 27px;
+
+}
+
+.item_order{
+    margin-left: 128px;
+    height:24px;
+    font-size: 14px;
+    width: 50px;
+    text-align: center;
+}
+
+.main_img{
+    display:block;
+    position: fixed;
+    z-index: 9999;
+    background-color: rgba(0,0,0,0.5);
+    width: 100%;
+    height:100%;
+}

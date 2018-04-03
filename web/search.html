@@ -1,0 +1,285 @@
+<!--Written By Chenzhe
+ Modified By WangHao-->
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <title>search</title>
+    <link rel="stylesheet" href="css/font-awesome.css">
+    <link rel="stylesheet" href="css/head.css">
+    <link rel="stylesheet" href="css/search.css">
+    <link rel="stylesheet" href="css/jquery-ui.css">
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <script src="js/jquery-ui.js"></script>
+    <script src="js/search.js"></script>
+    <script>
+        var objs;
+        function gosub(obj) {
+            objs=obj;
+            var price_each=$(objs).find(".car_price").text();
+            $('.each_price').text(price_each);
+            $('.main_img').css('display','block');
+            $('#submit_button').bind('click',function () {
+                var dis=$(objs).find('.item_dis').text();
+                var id=$(objs).find("#this_id").text();
+                var loginName=$("#loginname").text();
+                var name=$(objs).find("#this_name").text();
+                var getCarLocation=$(objs).find("#getCarLocation").text();
+               // alert(loginName+"-"+id+'-'+name);
+                $.ajax({type:"post",url:"/RentCar",dataType:"json",data:{"username":loginName,"ID":id,"carName":name,"carDis":dis},success:function (data) {
+                        var valid=data.valid;
+                        if(valid=="false"){
+                            document.cookie='LoginName='+'';
+                            document.cookie='isLogin='+''+'false';
+                            alert("请登陆");
+                        } else {
+                            //alert("ok?");
+                            var result = data.result;
+                            if (result == "true") {
+                                $("#carform").hide();
+                                $(".success_info").show();
+                               $("#car_name").text($(objs).find(".item_dis").text());
+                                $("#getlocation").text("请于"+getCarLocation+"处取车");
+                                $("#submit_button").text("成功租借");
+                                $("#submit_button").css({"background-color": "#5cb85c", "border-color": "#4cae4c"});
+                                $("#submit_button").unbind();
+                                $("#submit_button").bind('click',function () {
+                                    $(".main_img").css('display','none');
+                                    $('#carform').css('display','block');
+                                    $('.success_info').css('display','none');
+                                    $('#submit_button').css({'background-color': '', 'border-color': '#4cae4c'});
+                                    $('#submit_button').text('确认订单');
+                                    $(objs).hide();
+                                    $("#submit_button").unbind();
+                                    $("#info_main_close").unbind();
+                                })
+                                $("#info_main_close").unbind();
+                                $("#info_main_close").click(function () {
+                                    $('.main_img').css('display','none');
+                                    $('#carform').css('display','block');
+                                    $('.success_info').css('display','none');
+                                    $("#submit_button").unbind();
+                                    $("#info_main_close").unbind();
+                                    $('#submit_button').css({'background-color': '', 'border-color': '#4cae4c'});
+                                    $('#submit_button').text('确认订单');
+                                    $(objs).hide();
+                                });
+                            } else {
+                                alert("订购失败！");
+                            }
+                        }
+                    }});
+
+                $('#start_year').val('');
+                $("#end_year").val('');
+                $('#day').text('0');
+                $("#price").text('0');
+            });
+
+        }
+    </script>
+</head>
+<body>
+
+<div class="main_img" style="display: none">
+    <div class="each_price" style="display: none"></div>
+    <div class="info_main" id="info_main" style="position:relative;width: 600px;height: 400px;margin-left: auto;margin-right:auto;margin-top:auto;background-color: #ffffff;border-radius: 5px;box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08) !important;">
+        <div style="font-size: 18px;padding-left: 100px;padding-top: 30px;"><span>确认订单</span>
+            <div style="padding-left: 300px;display: inline"><i class="fa fa-close fa-fw" style="cursor: pointer " id="info_main_close"
+            onclick="$('.main_img').css('display','none');"></i></div>
+        </div>
+
+        <form id="carform" style="display: block">
+            <div  style="margin-top: 30px;">
+                <span style="margin-left: 100px;font-size: 16px;">起始日期</span>
+                <input type="text" value="" id="start_year" style="margin-left: 20px;height: 28px;width: 250px;padding-left: 20px;font-size: 14px">
+
+            </div><div  style="margin-top: 30px">
+                <span style="margin-left: 100px;font-size: 16px;">截止日期</span>
+                <input type="text" value="" id="end_year" style="margin-left: 20px;height: 28px;width: 250px;padding-left: 20px;font-size: 14px;">
+            </div><div style="margin-top: 45px">
+                <span style="margin-left: 120px;font-size: 16px;">天数</span>
+                <span style="margin-left: 20px;font-size:24px;" id="day">0<span style="font-size: 14px;color: #333333">&nbsp;天</span></span>
+                <span style="margin-left: 120px;font-size:16px;">价格</span>
+                <span style="margin-left: 20px;font-size:24px;" id="price">0</span><span style="font-size: 14px;color: #333333">&nbsp;元</span>
+            </div>
+        </form>
+        <div class="success_info" style="display: none" >
+            <div style="height: 35px;width: 1px;"></div>
+            <div style="font-size: 24px;width:600px;text-align: center; ">恭喜您成功租借<br/></div>
+            <div style="height: 30px;width: 1px;"></div>
+            <div id="car_name" style="font-size: 20px;width:600px;text-align: center;">none</div>
+            <div style="height: 30px;width: 1px;"></div>
+            <div id="getlocation" style="font-size: 20px;width:600px;text-align: center;">none</div>
+            <div style="height: 30px;width: 1px;"></div>
+        </div>
+            <div class="confirm_button" id="submit_button" style="width: 200px;margin-left: 200px;margin-top: 50px;height:40px;font-size: 16px;line-height: 40px;">确认订单</div>
+
+
+    </div>
+</div>
+
+<div class="head" id="head">
+</div>
+<div class="main_container">
+    <div class="main_wrapper">
+        <div class="tip">
+            <div class="crumbs">
+                <span><a style="text-decoration: none;color: #333333;font-size: 16px;" href="/index.html">主页</a></span>
+                <span style="color: #7a838d;font-size: 16px;">>车辆选择</span>
+            </div>
+        </div>
+
+        <div class="search_panel">
+            <div class="brand search_item">
+                <div class="item_discription">品牌</div>
+                <div class="item_wrapper">
+                    <span>不限</span>
+                    <span>奥迪</span>
+                    <span>宝马</span>
+                    <span>奔驰</span>
+                    <span>别克</span>
+                    <span>比亚迪</span>
+                    <span>本田</span>
+                    <span>大众</span>
+                    <span>丰田</span>
+                    <span>福特</span>
+                    <span>路虎</span>
+                    <span>捷豹</span>
+                    <span>马自达</span>
+                    <span style="padding-left:65px;width: 55px;" id="brand_more">更多&nbsp;<i id="arrow" class="fa fa-angle-down fa-fw" style="color: #7a838d"></i></span>
+                </div>
+                <div class="item_extend">
+                        <span>玛莎拉蒂</span>
+                        <span>吉利</span>
+                        <span>奇瑞</span>
+                        <span>起亚</span>
+                        <span>日产</span>
+                        <span>特斯拉</span>
+                        <span>现代</span>
+                        <span>雪佛兰</span>
+                        <span>沃尔沃</span>
+                        <span>五菱</span>
+                        <span>其他</span>
+                </div>
+            </div>
+
+            <div class="displacement search_item">
+                <div class="item_discription">排量</div>
+                <div class="item_wrapper">
+                    <span style="width: 60px;">不限</span>
+                    <span>1.6L以下</span>
+                    <span>1.6L</span>
+                    <span>1.7L</span>
+                    <span>1.8L</span>
+                    <span>1.9L</span>
+                    <span>2.0L</span>
+                    <span>2.1L</span>
+                    <span>2.2L</span>
+                    <span>2.2L以上</span>
+                </div>
+            </div>
+
+            <div class="mileage search_item">
+                <div class="item_discription">里程</div>
+                <div class="item_wrapper">
+                    <span style="width: 60px;">不限</span>
+                    <span>1000公里以下</span>
+                    <span>1000-5000公里</span>
+                    <span>5000-10000公里</span>
+                    <span>1万-2万公里</span>
+                    <span>2万-5万公里</span>
+                    <span>5万-10万公里</span>
+                    <span>10万公里以上</span>
+                </div>
+            </div>
+
+            <div class="other_option search_item">
+                <div class="item_discription">更多</div>
+                <div class="item_wrapper">
+                    <div class="item_age">
+                        车龄&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i class="fa fa-angle-down fa-fw"></i>
+                        <div class="item_age_more" style="display: none">
+                            <span>1年</span>
+                            <span>2年</span>
+                            <span>3年</span>
+                            <span>4年</span>
+                            <span>5年</span>
+                            <span>5年以上</span>
+                        </div>
+                    </div>
+
+                    <div class="item_type">
+                        类型&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i class="fa fa-angle-down fa-fw"></i>
+                        <div class="item_type_more" style="display: none">
+                            <span>两厢轿车</span>
+                            <span>三厢轿车</span>
+                            <span>SUV</span>
+                            <span>面包车</span>
+                            <span>皮卡</span>
+                        </div>
+                    </div>
+
+                    <div class="confirm_button">确认
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="main_tip">
+            <span style="font-size: 24px;top: 30px;position: absolute">全部</span>
+        </div>
+
+            <div class="main_item_wrapper">
+        </div>
+
+    </div>
+
+    <div class="foot">
+        <div class="foot_wrapper">
+            <div class="foot_info">
+                <div class="foot_item">
+                    <ul>
+                        <li>关于</li>
+                        <li>关于我们</li>
+                        <li>核心团队</li>
+                        <li>诚聘英才</li>
+                        <li>商务合作</li>
+                    </ul>
+                </div>
+                <div class="foot_item">
+                    <ul>
+                        <li>条款</li>
+                        <li>用户条款</li>
+                        <li>隐私条款</li>
+                        <li>合作条款</li>
+                    </ul>
+                </div>
+                <div class="foot_item">
+                    <ul>
+                        <li>帮助</li>
+                        <li>在线客服</li>
+                        <li>常见问题</li>
+                        <li>网站导航</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="foot_other_info">
+                咨询电话：4008-823-823<br>
+                (周一至周日 8:00-21:00)<br>
+                售后服务专线：4008-823-823<br>
+                (周一至周日 9:00-21:00)<br>
+            </div>
+            <div class="foot_follow_us">
+                <img src="https://www.alevery.com/images/2017/12/11/AnGK3.png" width="100px">
+                <span style="margin-left: 20px;text-align: center;font-size: 13px">关注我们</span>
+            </div>
+            <div class="foot_about">
+                © 2017-2017 J2EE.com All Rights Reserved. 上海吉兔翼翼网络科技有限公司 版权所有 沪ICP备19260817号
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+</body>
+</html>

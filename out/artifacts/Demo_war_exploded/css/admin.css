@@ -1,0 +1,328 @@
+#info_main_bg{
+    display:none;
+    position: fixed;
+    z-index: 9999;
+    background-color: rgba(0,0,0,0.5);
+    width: 100%;
+    height:100%;
+}
+
+.main_container{
+    min-width: 1200px;
+    font-family: "Hiragino Sans GB","华文细黑","STHeiti","微软雅黑","Microsoft YaHei",SimHei,"Helvetica Neue",Helvetica,Arial,sans-serif !important;
+    background-color: #f8f8f8;
+}
+
+.main_wrapper{
+    margin:0px auto 30px auto;
+    width: 1200px;
+    height:auto;
+    background-color: #f8f8f8;
+}
+
+.main_nav_left{
+    display: inline-block;
+    vertical-align: top;
+    margin-top: 20px;
+    padding: 0;
+    top:5%;
+    height: 90%;
+    width: 100px;
+}
+
+.main_nav_left div a{
+    color: #777;
+    width: 90px;
+    height: 30px;
+    line-height: 24px;
+    text-align: left;
+    display: block;
+    text-decoration: none;
+    padding-left: 10px;
+}
+
+.nav_item{
+    font-size: 16px;
+    color: black!important;
+    height:40px;
+    padding-top: 20px;
+    margin-left: -10px;
+}
+
+.main_right{
+    margin-top: 20px;
+    padding-left: 90px;
+    display: inline-block;
+    vertical-align: top;
+    top:5%;
+    right:0px;
+    height: 90%;
+    width: 1000px;
+}
+
+.panel{
+    padding: 0;
+    margin: 0;
+}
+
+.tip{
+    position: relative;
+    height:57px;
+    width: 998px;
+    border: solid 1px #dfe3e3;
+    background-color: white;
+}
+
+.tip h3{
+    font-weight: 400;
+    padding-left: 30px;
+    padding-top:5px;
+    color: #333;
+}
+
+.list_container{
+    width: 958px;
+    margin-top: 15px;
+    height: auto;
+    border:solid 1px #dfe3e3;
+    background-color: white;
+    padding: 30px 20px 30px 20px;
+}
+
+.list_item_tip{
+    border: solid 1px #dfe3e3;
+    background-color: #f5f5f5;
+    color: #666666;
+    font-size: 15px;
+    height:30px;
+}
+
+.list_item_tip span{
+    display: block;
+    float: left;
+    border-right: 1px solid #e4e6e9;
+    height: 30px;
+    line-height: 30px;
+    vertical-align: middle;
+}
+
+
+.list_item{
+    height:104px;
+    border: solid 1px #e4e6e9;
+    width: 956px;
+    margin-top: 20px;
+    font-size:16px!important;
+    line-height: 80px;
+    vertical-align: middle;
+}
+
+.list_item_time{
+    width: 936px;
+    background-color: #f5f5f5;
+    padding-left: 20px;
+    color: #666666;
+    height:24px;
+    line-height: 24px!important;
+}
+
+.car_photo{
+    float: left;
+    margin-top: auto;
+    margin-bottom: auto;
+    height:80px;
+    padding-right: 5px;padding-left: 5px;
+    width:80px;
+    border-right: solid 1px #e4e6e9;
+}
+
+.car_discription{
+    float: left;
+    margin-top: auto;
+    margin-bottom: auto;
+    height:80px;
+    padding-right: 30px;padding-left: 20px;
+    width:200px!important;
+    border-right: solid 1px #e4e6e9;
+}
+
+.car_ownner{
+    float:left;
+    margin-top: auto;
+    margin-bottom: auto;
+    height:80px;
+    padding-right: 25px;
+    padding-left: 20px;
+    width:100px;
+    border-right: solid 1px #e4e6e9;
+}
+
+.car_enddate{
+    float: left;
+    margin-top: auto;
+    margin-bottom: auto;
+    height:80px;
+    padding-right: 40px;padding-left: 20px;
+    width:100px;
+    border-right: solid 1px #e4e6e9;
+}
+
+.car_money{
+    float: left;
+    margin-top: auto;
+    margin-bottom: auto;
+    height:80px;
+    padding-right: 60px;padding-left: 20px;
+    width:80px;
+    border-right: solid 1px #e4e6e9;
+    font-size: 14px;
+}
+
+.car_order{
+    float:left;
+    margin-top: auto;
+    margin-bottom: auto;
+    height:80px;
+    padding-left: 10px;
+    width:80px;
+    position: relative;
+}
+
+.button_grey{
+    position: absolute;
+    left:30px;
+    top:20px;
+    width:80px;
+    height:40px;
+    line-height: 40px;
+    background: #f9f9f9;
+    border:#D8D8D8 solid 1px!important;
+    text-align: center;
+    border-radius: 3%;
+    cursor: pointer;
+}
+
+.button_grey:hover{
+    background-color: white;
+}
+
+.basic_info{
+    border: solid 1px #e4e6e9;
+    background-color: #ffffff;
+    height:520px;
+    padding: 0px 30px 0px 30px;
+}
+
+.person_info_item{
+    margin-left: 100px;
+    margin-top: 40px;
+}
+
+select{
+    border: 1px solid #D8D8D8;
+    width: 100px!important;
+    height: 38px!important;
+    padding-right: 24px;
+    line-height: 24px;
+    vertical-align: middle;
+    text-align: center;
+    color: #333;
+}
+
+input{
+    border: 1px solid #D8D8D8;
+    width: 240px;
+    padding: 7px 20px 7px 20px;
+    height: 24px;
+    font-size: 14px;
+    line-height: 24px;
+    vertical-align: middle;
+    color: black;
+    outline:0;
+}
+
+#old_pass,#new_pass{
+    padding-top: 20px;
+}
+
+.info_tipbar{
+    height:24px;
+    color: #f86397;
+    margin-left:100px;
+    margin-top: 20px;
+    width: 200px;
+}
+
+#info_confirm{
+    margin-top: 20px;
+    margin-left: 100px;
+    width: 100px;
+    height: 38px;
+}
+
+.car_brand{
+    height: 80px;
+    float: left;
+    width:80px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left:20px;
+    padding-right:40px;
+    border-right: solid 1px #e4e6e9;
+}
+
+.car_displacement{
+    height: 80px;
+    float: left;
+    width:80px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left:20px;
+    padding-right:10px;
+    border-right: solid 1px #e4e6e9;
+}
+
+.car_type{
+    height: 80px;
+    float: left;
+    width:80px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left:20px;
+    padding-right:10px;
+    border-right: solid 1px #e4e6e9;
+}
+
+.car_age{
+    height: 80px;
+    float: left;
+    width:80px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left:20px;
+    padding-right:10px;
+    border-right: solid 1px #e4e6e9;
+}
+
+.info_main_item select{
+    font-family: PingFang SC, Helvetica Neue, Hiragino Sans GB, tahoma, arial, Microsoft Yahei, \5b8b\4f53, sans-serif;!important;
+    font-weight: 400;
+    width: 300px!important;
+    font-size: 14px;
+    margin-left: 20px;
+    padding-left: 10px;
+}
+
+.info_main_item select option{
+    font-family: PingFang SC, Helvetica Neue, Hiragino Sans GB, tahoma, arial, Microsoft Yahei, \5b8b\4f53, sans-serif;!important;
+    font-weight: 400;
+    height: 20px;
+    font-size: 14px;
+}
+
+.info_main_item button{
+    margin-left: 155px;
+    width: 85px;
+    height: 40px;
+    border-radius: 5px;
+}

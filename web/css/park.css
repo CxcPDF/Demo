@@ -1,0 +1,113 @@
+.main_container{
+    min-width: 1200px;
+    background-color: #f6f6f6;
+    font-family: "Hiragino Sans GB","华文细黑","STHeiti","微软雅黑","Microsoft YaHei",SimHei,"Helvetica Neue",Helvetica,Arial,sans-serif !important;
+}
+
+.main_wrapper{
+    margin:0 auto;
+    position: relative;
+    width: 1200px;
+}
+
+.main_wrapper span a:hover{
+    color: #22ac38!important;
+}
+
+.item_wrapper{
+    width: 1120px;
+    padding: 20px;
+    margin-bottom: 20px;
+    background-color: #f6f6f6;
+}
+
+.item_sort{
+    width: 1118px;
+    background-color: white;
+    height: 40px;
+    box-shadow: 0 0 3px 1px #e6e6e6;
+    border-radius: 5px;
+}
+
+.item_sort span {
+    height: 40px;
+    width: 60px;
+    font-size: 15px;
+    line-height: 40px;
+    text-align: center;
+    border-right: 1px solid #e6e6e6;
+    padding-left: 5px;
+    padding-right: 5px;
+    cursor: pointer;
+}
+
+.item_sort span:hover{
+    color: red;
+    font-weight: 500;
+}
+
+select,option{
+    font-size: 15px!important;
+    font-family: "Hiragino Sans GB", "华文细黑", "STHeiti", "微软雅黑", "Microsoft YaHei", SimHei, "Helvetica Neue", Helvetica, Arial, sans-serif!important;
+    height: 28px;
+}
+.park_item{
+    width: 1118px;
+    border: 1px solid #e6e6e6;
+    height:200px;
+    margin-top: 30px;
+    box-shadow: 0 0 3px 1px #e6e6e6;
+    border-radius: 5px;
+    background-color: white;
+}
+
+.item{
+    display: block;
+    float: left;
+    height:200px;
+    margin-bottom: auto;
+    width: 110px;
+    margin-left: 20px;
+    font-size: 20px;
+    vertical-align: baseline;
+    position: relative;
+}
+
+.park_item_img{
+    width: 200px;
+}
+.park_item_dis{
+    width: 240px;
+}
+.park_item_addr{
+    width: 220px;margin-left: 10px;
+}
+.park_item_pri{
+    width: 130px;margin-left: 10px;
+}
+.park_item_status{
+    width: 120px;
+}
+.park_item_act{
+    width: 60px;
+}
+
+.item span{
+    position: absolute;
+    top: 80px;
+}
+
+.item button{
+    background-color: #2D8CF0!important;
+    font-size: 13px;
+    border-radius: 4px;
+    width: 60px;
+    height: 30px;
+    font-family: "Hiragino Sans GB", "华文细黑", "STHeiti", "微软雅黑", "Microsoft YaHei", SimHei, "Helvetica Neue", Helvetica, Arial, sans-serif!important;
+    position: absolute;
+    top:80px;
+}
+
+.item button:hover{
+    background-color: #57a3f3!important;
+}
